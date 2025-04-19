@@ -140,5 +140,14 @@
         <h1>Section 6</h1>
     </div>
 </body>
+<script>
+    function setRealVH() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--real-vh', `${vh}px`);
+    }
 
+    // Set on load and resize
+    window.addEventListener('load', setRealVH);
+    window.addEventListener('resize', setRealVH);
+  </script>
 </html>
