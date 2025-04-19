@@ -202,59 +202,85 @@
 </body>
 <script>
     let products = [
-        { img: "./headphone black.png", alt: "Headphone Black" },
-        { img: "./headphone green.png", alt: "Headphone Green" },
-        { img: "./headphone blue.png", alt: "Headphone Blue" }
-
+      { img: "./headphone black.png", alt: "Headphone Black" },
+      { img: "./headphone blue.png", alt: "Headphone Blue" },
+      { img: "./headphone green.png", alt: "Headphone Green" }
     ];
 
-    function moveToCenter(direction) {
-        const productboxmainimgmiddle = document.querySelector(".product-box-main-img-middle");
-        const productDivs = document.querySelectorAll(".product");
+    let startX = 0;
+    let isTouching = false;
 
-        // Start by applying smooth transitions for the current products
-        productDivs.forEach(product => {
-            product.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+    function moveToCenter(direction) {
+      const productboxmainimgmiddle = document.querySelector(".productboxmainimgmiddle");
+      const productDivs = document.querySelectorAll(".product");
+
+      // Start by applying smooth transitions for the current products
+      productDivs.forEach(product => {
+        product.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+      });
+
+      // Shift products based on the direction
+      if (direction === 'left') {
+        products.unshift(products.pop()); // rotate right
+      } else if (direction === 'right') {
+        products.push(products.shift()); // rotate left
+      }
+
+      // Update product images after shifting the array
+      productDivs[0].querySelector("img").src = products[0].img;
+      productDivs[0].querySelector("img").alt = products[0].alt;
+      
+      productDivs[1].querySelector("img").src = products[1].img;
+      productDivs[1].querySelector("img").alt = products[1].alt;
+      
+      productDivs[2].querySelector("img").src = products[2].img;
+      productDivs[2].querySelector("img").alt = products[2].alt;
+
+      // Apply animations and transform effects to create smooth transition
+      setTimeout(() => {
+        productDivs.forEach((product, index) => {
+          if (index === 1) {
+            product.classList.add("center");
+            product.classList.remove("left", "right");
+          } else if (index === 0) {
+            product.classList.add("left");
+            product.classList.remove("center", "right");
+          } else if (index === 2) {
+            product.classList.add("right");
+            product.classList.remove("center", "left");
+          }
         });
 
-        // Shift products based on the direction
-        if (direction === 'left') {
-            products.unshift(products.pop()); // rotate right
-        } else if (direction === 'right') {
-            products.push(products.shift()); // rotate left
-        }
-
-        // Update product images after shifting the array
-        productDivs[0].querySelector("img").src = products[0].img;
-        productDivs[0].querySelector("img").alt = products[0].alt;
-
-        productDivs[1].querySelector("img").src = products[1].img;
-        productDivs[1].querySelector("img").alt = products[1].alt;
-
-        productDivs[2].querySelector("img").src = products[2].img;
-        productDivs[2].querySelector("img").alt = products[2].alt;
-
-        // Apply animations and transform effects to create smooth transition
-        setTimeout(() => {
-            productDivs.forEach((product, index) => {
-                if (index === 1) {
-                    product.classList.add("center");
-                    product.classList.remove("left", "right");
-                } else if (index === 0) {
-                    product.classList.add("left");
-                    product.classList.remove("center", "right");
-                } else if (index === 2) {
-                    product.classList.add("right");
-                    product.classList.remove("center", "left");
-                }
-            });
-
-            // Update the product name based on the center product
-            const centerProduct = products[1];
-            document.getElementById('product-name').textContent = centerProduct.alt;
-        }, 500); // Delay the class switching to match the transition duration
+        // Update the product name based on the center product
+        const centerProduct = products[1];
+        document.getElementById('product-name').textContent = centerProduct.alt;
+      }, 500); // Delay the class switching to match the transition duration
     }
 
-</script>
+    // Touch events for swipe functionality
+    const productboxmainimgmiddleElement = document.getElementById('productboxmainimgmiddle');
+
+    productboxmainimgmiddleElement.addEventListener('touchstart', function(event) {
+      startX = event.touches[0].clientX;
+      isTouching = true;
+    });
+
+    productboxmainimgmiddleElement.addEventListener('touchmove', function(event) {
+      if (!isTouching) return;
+
+      let moveX = event.touches[0].clientX;
+      if (startX - moveX > 50) { // Swiping left
+        moveToCenter('right');
+        isTouching = false;
+      } else if (moveX - startX > 50) { // Swiping right
+        moveToCenter('left');
+        isTouching = false;
+      }
+    });
+
+    productboxmainimgmiddleElement.addEventListener('touchend', function() {
+      isTouching = false;
+    });
+  </script>
 
 </html>
