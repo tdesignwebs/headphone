@@ -144,7 +144,7 @@
                 <h1 id="product-name">Headphone Blue</h1>
             </div>
 
-            <div class="productboxmainimgmiddle">
+            <div class="carousel" id="carousel">
                 <div class="product left" onclick="moveToCenter('left')">
                     <img src="./headphone black.png" alt="Product 1" />
                 </div>
@@ -211,7 +211,7 @@
     let isTouching = false;
 
     function moveToCenter(direction) {
-      const productboxmainimgmiddle = document.querySelector(".productboxmainimgmiddle");
+      const carousel = document.querySelector(".carousel");
       const productDivs = document.querySelectorAll(".product");
 
       // Start by applying smooth transitions for the current products
@@ -258,14 +258,14 @@
     }
 
     // Touch events for swipe functionality
-    const productboxmainimgmiddleElement = document.getElementById('productboxmainimgmiddle');
+    const carouselElement = document.getElementById('carousel');
 
-    productboxmainimgmiddleElement.addEventListener('touchstart', function(event) {
+    carouselElement.addEventListener('touchstart', function(event) {
       startX = event.touches[0].clientX;
       isTouching = true;
     });
 
-    productboxmainimgmiddleElement.addEventListener('touchmove', function(event) {
+    carouselElement.addEventListener('touchmove', function(event) {
       if (!isTouching) return;
 
       let moveX = event.touches[0].clientX;
@@ -278,9 +278,10 @@
       }
     });
 
-    productboxmainimgmiddleElement.addEventListener('touchend', function() {
+    carouselElement.addEventListener('touchend', function() {
       isTouching = false;
     });
   </script>
+
 
 </html>
