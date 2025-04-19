@@ -1,146 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Londrina+Outline&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smooth Scroll Sections</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      overflow: hidden;
+    }
 
+    section {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      color: white;
+      scroll-snap-align: start;
+    }
+
+    #section1 { background-color: #ff6b6b; }
+    #section2 { background-color: #4ecdc4; }
+    #section3 { background-color: #1a535c; }
+    #section4 { background-color: #ffe66d; color: #333; }
+
+    .wrapper {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Section 1 -->
-    <div class="navbar">
-        <div class="logo">AlsanaAlgo</div>
-        <div class="navbar-items-text">
-            <a href="">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.5 17C14.7005 17.6224 13.6502 18 12.5 18C11.3497 18 10.2995 17.6224 9.5 17"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                    <path
-                        d="M2.85139 13.2135C2.49837 10.9162 2.32186 9.76763 2.75617 8.74938C3.19047 7.73112 4.15403 7.03443 6.08114 5.64106L7.52099 4.6C9.91829 2.86667 11.1169 2 12.5 2C13.883 2 15.0817 2.86667 17.479 4.6L18.9188 5.64106C20.846 7.03443 21.8095 7.73112 22.2438 8.74938C22.6781 9.76763 22.5016 10.9162 22.1486 13.2135L21.8476 15.1724C21.3471 18.4289 21.0969 20.0572 19.929 21.0286C18.7611 22 17.0536 22 13.6388 22H11.3612C7.94634 22 6.23891 22 5.071 21.0286C3.90309 20.0572 3.65287 18.4289 3.15243 15.1724L2.85139 13.2135Z"
-                        stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                </svg>
-                Home</a>
-            <a href="">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M7.48633 3.7002C10.2833 6.79476 14.8961 0.115905 17.6255 2.53974C19.196 3.93439 18.6995 7.01373 16.6607 9.01999"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                    <path
-                        d="M14.2897 13.9839C14.3075 13.6494 14.4014 13.0373 13.8927 12.5722M13.8927 12.5722C13.7353 12.4282 13.5201 12.2983 13.2272 12.1951C12.1788 11.8256 10.891 13.0623 11.802 14.1944C12.2917 14.803 12.6692 14.9901 12.6337 15.6812C12.6087 16.1673 12.1311 16.6752 11.5018 16.8686C10.9551 17.0367 10.352 16.8142 9.97052 16.3879C9.50476 15.8675 9.5518 15.3769 9.54782 15.163M13.8927 12.5722L14.4668 11.998M10.012 16.4528L9.4668 16.998"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M18.7726 6.63305C19.6981 6.8108 19.9057 7.39525 20.182 9.01703C20.4309 10.4776 20.5007 12.2304 20.5007 12.9765C20.4753 13.2515 20.3625 13.5081 20.182 13.7174C18.2469 15.7455 14.4064 19.5753 12.4681 21.4778C11.7074 22.1569 10.5597 22.1716 9.75241 21.5482C8.09928 20.0612 6.51095 18.3803 4.95501 16.8625C4.32993 16.0574 4.34458 14.9129 5.02567 14.1544C7.07621 12.0272 10.7867 8.38602 12.8813 6.3745C13.0913 6.19455 13.3486 6.08199 13.6243 6.05672C14.0943 6.0566 14.9005 6.11977 15.6859 6.1653"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                </svg>
-                Pricing</a>
-            <a href="">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M20.25 11V10C20.25 6.22876 20.25 4.34315 19.0784 3.17157C17.9068 2 16.0212 2 12.25 2H11.2501C7.47883 2 5.59322 2 4.42165 3.17156C3.25008 4.34312 3.25006 6.22872 3.25003 9.99993L3.25 14C3.24996 17.7712 3.24995 19.6568 4.42148 20.8284C5.59305 21.9999 7.47873 22 11.25 22"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M7.75 7H15.75M7.75 12H15.75" stroke="white" stroke-width="1.5"
-                        stroke-linecap="round" />
-                    <path
-                        d="M13.75 20.8268V22H14.9234C15.3328 22 15.5375 22 15.7215 21.9238C15.9056 21.8475 16.0503 21.7028 16.3398 21.4134L21.1634 16.5894C21.4364 16.3164 21.5729 16.1799 21.6459 16.0327C21.7848 15.7525 21.7848 15.4236 21.6459 15.1434C21.5729 14.9961 21.4364 14.8596 21.1634 14.5866C20.8903 14.3136 20.7538 14.1771 20.6065 14.1041C20.3263 13.9653 19.9973 13.9653 19.7171 14.1041C19.5699 14.1771 19.4333 14.3136 19.1603 14.5866L14.3367 19.4106C14.0472 19.7 13.9025 19.8447 13.8263 20.0287C13.75 20.2128 13.75 20.4174 13.75 20.8268Z"
-                        stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                </svg>
-                Blog</a>
-            <a href="">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.5 7H16.5" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M8.5 11H12.5" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path
-                        d="M13.5 21.5V21C13.5 18.1716 13.5 16.7574 14.3787 15.8787C15.2574 15 16.6716 15 19.5 15H20M20.5 13.3431V10C20.5 6.22876 20.5 4.34315 19.3284 3.17157C18.1569 2 16.2712 2 12.5 2C8.72877 2 6.84315 2 5.67157 3.17157C4.5 4.34314 4.5 6.22876 4.5 10V14.5442C4.5 17.7892 4.5 19.4117 5.38607 20.5107C5.56508 20.7327 5.76731 20.9349 5.98933 21.1139C7.08831 22 8.71082 22 11.9558 22C12.6614 22 13.0141 22 13.3372 21.886C13.4044 21.8623 13.4702 21.835 13.5345 21.8043C13.8436 21.6564 14.093 21.407 14.5919 20.9081L19.3284 16.1716C19.9065 15.5935 20.1955 15.3045 20.3478 14.9369C20.5 14.5694 20.5 14.1606 20.5 13.3431Z"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                Pages
-            </a>
-        </div>
-        <div class="hamburger-menu">
-            <div class="line-1"></div>
-            <div class="line-2"></div>
-            <div class="line-3"></div>
-        </div>
-    </div>
-    <div class="container">
-  
-        <div class="main-inside-box">
-            <div class="left-side">
-                <div class="items-info">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.33301 20C3.33301 15.286 3.33301 12.9289 4.79747 11.4645C6.26194 10 8.61896 10 13.333 10H21.6663C26.3803 10 28.7373 10 30.2018 11.4645C31.6663 12.9289 31.6663 15.286 31.6663 20C31.6663 24.714 31.6663 27.071 30.2018 28.5355C28.7373 30 26.3803 30 21.6663 30H13.333C8.61896 30 6.26194 30 4.79747 28.5355C3.33301 27.071 3.33301 24.714 3.33301 20Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M31.667 15.8333L33.379 16.1187C34.5145 16.3079 35.0822 16.4025 35.513 16.6778C35.9367 16.9485 36.269 17.3407 36.4663 17.8032C36.667 18.2733 36.667 18.8488 36.667 20C36.667 21.1512 36.667 21.7267 36.4663 22.1968C36.269 22.6593 35.9367 23.0515 35.513 23.3222C35.0822 23.5975 34.5145 23.6922 33.379 23.8813L31.667 24.1667" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M10 16.6667V23.3333" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M15 16.6667V23.3333" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M20 16.6667V23.3333" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M25 16.6667V23.3333" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                        <h2>14hrs</h1>
-                </div>
-                <div class="items-info">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.8333 36.6667C14.055 36.6667 16.6667 34.055 16.6667 30.8333C16.6667 27.6117 14.055 25 10.8333 25C7.61167 25 5 27.6117 5 30.8333C5 34.055 7.61167 36.6667 10.8333 36.6667Z" stroke="white" stroke-width="1.5"/>
-                        <path d="M30 31.6667C32.7614 31.6667 35 29.4281 35 26.6667C35 23.9053 32.7614 21.6667 30 21.6667C27.2386 21.6667 25 23.9053 25 26.6667C25 29.4281 27.2386 31.6667 30 31.6667Z" stroke="white" stroke-width="1.5"/>
-                        <path d="M16.667 30.8334V11.6667C16.667 10.1276 16.667 9.35807 17.1062 8.87992C17.5452 8.40179 18.3628 8.33202 19.998 8.19251C26.7037 7.62039 31.5153 5.43344 33.9258 4.01632C34.4183 3.72669 34.6647 3.58189 34.8325 3.67789C35.0003 3.77389 35.0003 4.05252 35.0003 4.60981V26.6667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M16.667 16.6667C26.4448 16.6667 32.9633 12.7778 35.0003 11.6667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        
-                        <h2>54hrs</h1>
-                </div>
-                <div class="items-info">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M29.9308 13.9815C29.9308 10.4019 25.4848 7.5 20.0003 7.5C14.5158 7.5 10.0698 10.4019 10.0698 13.9815C10.0698 17.5612 12.7781 19.537 20.0003 19.537C27.2225 19.537 30.8337 21.3888 30.8337 26.0185C30.8337 30.6482 25.9835 32.5 20.0003 32.5C14.0172 32.5 9.16699 29.5982 9.16699 26.0185" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M20.833 4.16669V7.01669M20.833 35.8334V32.9834" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        
-                        <h2>129,99</h1>
-                </div>
-            </div>
-            <div class="middle-side">
-                <img class="headphone-main-img" src="./headphone green.png" alt="">
-                <h1 class="wireless-text">Wireless</h1>
-                <h1 class="headphone-text">headphone</h1>
-            </div>
-            <div class="right-side">
-                <div class="side-text">AlsanaAlgo</div>
-                <div class="bottom-right-text">
-                    Experience sound like never before with our<br>
-                    sleek metallic purple wireless headphones.<br>
-                    Designed for both audio lovers and style<br>
-                    seekers, these headphones deliver crystal-clear<br>
-                    sound and modern design.
-                </div>
-            </div>
-           
-            
-        </div>
-    </div>
+  <div class="wrapper">
+    <section id="section1">Section 1</section>
+    <section id="section2">Section 2</section>
+    <section id="section3">Section 3</section>
+    <section id="section4">Section 4</section>
+  </div>
 
-    <!-- Section 2 to 6 -->
-    <div class="container">
-        <h1>Section 2</h1>
-    </div>
-    <div class="container">
-        <h1>Section 3</h1>
-    </div>
-    <div class="container">
-        <h1>Section 4</h1>
-    </div>
-    <div class="container">
-        <h1>Section 5</h1>
-    </div>
-    <div class="container">
-        <h1>Section 6</h1>
-    </div>
+  <script>
+    const wrapper = document.querySelector('.wrapper');
+    let isThrottled = false;
+
+    wrapper.addEventListener('wheel', (e) => {
+      if (isThrottled) return;
+
+      e.preventDefault();
+      isThrottled = true;
+
+      const direction = e.deltaY > 0 ? 1 : -1;
+      const sections = Array.from(document.querySelectorAll('section'));
+      const current = sections.findIndex(section => {
+        const rect = section.getBoundingClientRect();
+        return rect.top === 0;
+      });
+
+      const nextIndex = Math.min(Math.max(current + direction, 0), sections.length - 1);
+      sections[nextIndex].scrollIntoView({ behavior: 'smooth' });
+
+      setTimeout(() => {
+        isThrottled = false;
+      }, 1000); // Adjust time to control scroll delay
+    }, { passive: false });
+  </script>
 </body>
-
 </html>
