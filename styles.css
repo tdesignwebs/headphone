@@ -1,1 +1,206 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    background: linear-gradient(35deg, #8F8B80, #C1C1B7);
+}
+
+.container {
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-items-text {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    justify-content: center;
+    gap: 54px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.hamburger-menu {
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+    background-color: white;
+    border-radius: 10px;
+    height: 2px;
+}
+
+.line-1,
+.line-3 {
+    width: 50px;
+}
+
+.line-2 {
+    width: 30px;
+}
+
+h1 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 48px;
+}
+
+h2 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.main-inside-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.left-side {
+    width: 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+    height: 95%;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.items-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.middle-side {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.right-side {
+    width: 15%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    height: 95%;
+}
+
+.side-text {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 10;
+}
+
+.wireless-text {
+    position: absolute;
+    top: 20px;
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 118px;
+    font-weight: 900;
+    z-index: 3;
+    letter-spacing: -5px;
+    -webkit-text-stroke: inherit;
+}
+
+.headphone-text {
+    position: absolute;
+    top: 110px;
+    font-size: 150px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.headphone-main-img {
+    width: 624px;
+    height: 624px;
+    z-index: 2;
+}
+
+.bottom-right-text {
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: right;
+    min-width: 300px;
+    z-index: 5;
+}
 
