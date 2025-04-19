@@ -26,6 +26,7 @@ body {
     height: 100px;
     align-items: center;
     z-index: 10000;
+    top: 0;
     position: fixed;
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
